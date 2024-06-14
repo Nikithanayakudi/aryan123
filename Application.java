@@ -1,3 +1,4 @@
+
 package com.github.chrishantha.sample.allocations;
 
 import com.beust.jcommander.Parameter;
@@ -18,38 +19,24 @@ public class AllocationsApplication implements SampleApplication {
         }
         return true;
     }
+
 	#feature202 changes by Developer shilpa in Oct 2023
 	private class OddThread extends Thread {
 
-        public OddThread() {
-            super("Odd-Thread");
-        }
-
-        @Override
-        public void run() {
-            for (int i = 0; i < count; i++) {
-                if (!isEven(i)) {
-                    printNumber(i);
+	#feature201 changes by Developer vivek in Oct 2023
+	public void start() {
+        Collection<Integer> primeNumbers = new LinkedList<>();
+        System.out.println("Generating Prime numbers between 1 and " + max);
+        for (int i = 1; i < max; i++) {
+            boolean isPrimeNumber = true;
+            // Check whether the number is prime
+            for (int j = 2; j < i; j++) {
+                if (i % j == 0) {
+                    isPrimeNumber = false;
+                    break;
                 }
             }
-        }
-    }
-
-
-    private void printNumber(int i) {
-        System.out.format("Thread: %s, Number: %d%n", Thread.currentThread().getName(), i);
-    }
-
-    private synchronized boolean isEven(int i) {
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        return i % 2 == 0;
-    }
-#End of feature202
-
+            #End of feature201 changes
 
     @Override
     public void start() {
