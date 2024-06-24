@@ -3,4 +3,6 @@ Registration
 login
 types of account
 savings
-curre[A[C[C_acct[B[D[D[D[D[D[D[Dnt_acct
+
+#24june2024
+I am adding bank Details
